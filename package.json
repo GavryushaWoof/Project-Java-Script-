@@ -1,0 +1,23 @@
+{
+    "name": "ProjectJavaScript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "script.js",
+    "scripts": {
+        "start": "tsc && node dist/script.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GavryushaWoof/ProjectJavaScript.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/GavryushaWoof/ProjectJavaScript/issues"
+    },
+    "homepage": "https://github.com/GavryushaWoof/ProjectJavaScript#readme",
+    "dependencies": {
+        "typescript": "^3.9.5"
+    }
+}
