@@ -1,4 +1,4 @@
-import { PerformanceTypes } from "../enum/PerformanceTypes";
+import { PerformanceTypes } from "../enums/PerformanceTypes";
 
 export interface Performance {
     playId: string;
