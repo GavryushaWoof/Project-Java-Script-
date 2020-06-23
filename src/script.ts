@@ -3,6 +3,7 @@ import { Invoice } from './interfaces/Invoice';
 import { Performance } from './interfaces/Performance';
 import { getPlayStorages, getAmount, addText, getVolumeCredits, format } from './utils/utils';
 import { Plays } from './interfaces/Plays';
+import { FORMAT_DIVIDER } from './constants/constants';
 
 function statement(invoice: Invoice, plays: Plays): string {
     try {
@@ -16,7 +17,7 @@ function statement(invoice: Invoice, plays: Plays): string {
             volumeCredits += getVolumeCredits(play.type, perf.audience);
             totalAmount += thisAmount;
         }
-        result += `Итого с вас ${format(totalAmount / 100)}\n`;
+        result += `Итого с вас ${format(totalAmount / FORMAT_DIVIDER)}\n`;
         result += `Вы заработали ${volumeCredits} бонусов\n`;
         return result;
     } catch (error) {
