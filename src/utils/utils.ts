@@ -1,13 +1,18 @@
 import { Invoice } from "../interfaces/Invoice";
 import { Plays } from "../interfaces/Plays";
 import { PerformanceTypes } from "../enums/PerformanceTypes";
+import { Performance } from '../interfaces/Performance';
+
+export function getPlayStorages(play: Performance[]): Plays {
+    const result = play.reduce((acc: Plays, cur) => { acc[cur.playId] = { name: cur.playId, type: cur.type }; return acc; }, {});
+    return result
+}
 
 export function statement(invoice: Invoice, plays: Plays): string {
     try {
         let result = `Счет для ${invoice.customer}\n`;
         let totalAmount = 0;
         let volumeCredits = 0;
-
         for (let perf of invoice.performance) {
             const play = plays[perf.playId];
             let thisAmount = getAmount(play.type, perf.audience);
